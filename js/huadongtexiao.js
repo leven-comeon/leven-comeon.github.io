@@ -51,6 +51,7 @@
         for (var i = 0; i < particles.length; i++) {
             particles[i].update();
         }
+
         for (var i = particles.length - 1; i >= 0; i--) {
             if (particles[i].lifeSpan < 0) {
                 particles[i].die();
