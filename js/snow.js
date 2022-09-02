@@ -40,6 +40,16 @@ $(function () {
         newOn: 300  /* 定义密集程度，数字越小越密集 */
     });
 });
+/*样式二*/
+/* 控制下雪 */
+function snowFall(snow) {
+    /* 可配置属性 */
+    snow = snow || {};
+    this.maxFlake = snow.maxFlake || 200;   /* 最多片数 */
+    this.flakeSize = snow.flakeSize || 10;  /* 雪花形状 */
+    this.fallSpeed = snow.fallSpeed || 1;   /* 坠落速度 */
+}
+/* 兼容写法 */
 requestAnimationFrame = window.requestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
