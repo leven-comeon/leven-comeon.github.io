@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leven || 二分查找</title>
+    <title>Leven || LeetCode</title>
     <meta name="author" content="leven">
     <meta name="description" content="Hi, here is main page of leven ">
     <meta name="keywords" content=" ">
@@ -150,122 +150,98 @@
 
                 <div id="main">
                      
-<link rel="stylesheet" href="/css/post-body.css">
-<div class="article">
-    <div>
-        <h1>二分查找 </h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2022/9/3
-        </span>
-
+<div class="categories-tags">
+    
+    <div class="all-s">
         
-        <span class="category">
-            <a href="/categories/刷题笔记">
+        
+        <span>
+            <a href="/tags/杂文/" style=background:#ff7d73>
                 <span class="icon">
-                    <a-icon type="book" theme="filled" />
+                    <a-icon type="tag" theme="filled" />
                 </span>
-                刷题笔记
+                杂文
             </a>
         </span>
         
-
         
-
-        <span class="tags">
-            <span class="icon">
-                <a-icon type="tags" theme="filled" />
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/算法" style=color:#ffa2c4>
-                    算法
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/LeetCode" style=color:#03a9f4>
-                    LeetCode
-                </a>
-            </span>
-            
+        
+        <span>
+            <a href="/tags/算法/" style=background:#ff7d73>
+                <span class="icon">
+                    <a-icon type="tag" theme="filled" />
+                </span>
+                算法
+            </a>
         </span>
         
+        
+        
+        <span>
+            <a href="/tags/LeetCode/" style='background:linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)'>
+                <span class="icon">
+                    <a-icon type="tag" theme="filled" />
+                </span>
+                LeetCode
+            </a>
+        </span>
+        
+        
     </div>
+    <div id="archives">
+        
+        <a-timeline>
+            <a-timeline-item color="#a5c2f5">
+                <a-card hoverable>
+                    <div class="item-time">2022/9/3</div>
+                    <a href="/2022/09/03/二分查找/">
+                        <h3>二分查找</h3>
+                    </a>
+                    <div class="info">
+                        
+                        <span class="category">
+                            <a href="/categories/刷题笔记">
+                                <span class="icon">
+                                    <a-icon type="book" theme="filled" />
+                                </span>
+                                刷题笔记
+                            </a>
+                        </span>
+                        
 
-    <div class="content" v-pre>
-        <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search/" style="text-decoration: none;">704. 二分查找</a></p>
-</blockquote>
-<p>给定一个<code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code>  ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
-<p>示例1：</p>
-<pre><code class="markdown">输入: nums = [-1,0,3,5,9,12], target = 9
-输出: 4
-解释: 9 出现在 nums 中并且下标为 4
-</code></pre>
-<p>示例2：</p>
-<pre><code class="markdown">输入: nums = [-1,0,3,5,9,12], target = 2
-输出: -1
-解释: 2 不存在 nums 中因此返回 -1
-</code></pre>
-<p><strong>提示：</strong></p>
-<ol>
-<li>你可以假设 <code>nums</code> 中的所有元素是不重复的。</li>
-<li><code>n</code> 将在 <code>[1, 10000]</code>之间。</li>
-<li><code>nums</code> 的每个元素都将在 <code>[-9999, 9999]</code>之间。</li>
-</ol>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong>在有序数组中进行搜索，一般可考虑使用二分查找。</strong>题目明确说明数组中数据有序，因此可以使用二分查找。</p>
-<p>这个题是整数二分查找的模版题，直接上模版即可。</p>
-<h3 id="二分查找模版思路"><a href="#二分查找模版思路" class="headerlink" title="二分查找模版思路"></a>二分查找模版思路</h3><p>我们定义 target 是在封闭区间内的，即 target 在 [ low, high ] 中。因此，有如下特点：</p>
-<ul>
-<li>while (low &lt;&#x3D; high用 &lt;&#x3D; ，因为left &#x3D;&#x3D; right是有意义的，所以使用 &lt;&#x3D;</li>
-<li>if (nums[mid] &gt; target) high 要赋值为 mid - 1，因为当前这个nums[mid]一定不是target，那么接下来要查找的左区间结束下标位置就是 mid - 1.</li>
-<li>If(nums[mid] &lt; target) low 要赋值为 mid + 1， 因为当前这个nums[mid]一定不是target， 那么接下来要查找的右区间开始下标位置就是mid + 1.</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="c++">class Solution &#123;
-    int binarySearch(vector&lt;int&gt; nums, int target)
-    &#123;
-        int low = 0, high = nums.size()-1;
-        while(low &lt;= high)
-        &#123;
-            int mid = low + (high - low) / 2;
-            if(target == nums[mid]) return mid;
-            if(target &gt; nums[mid]) low = mid + 1;
-            else high = mid - 1;
-        &#125;
-        return low;
-    &#125;
-public:
-    int search(vector&lt;int&gt;&amp; nums, int target) &#123;
-        int id = binarySearch(nums, target);
-        if(id &gt;= nums.size()) return -1;
-        if(nums[id] == target) return id;
-        return -1;
-    &#125;
-&#125;;
-</code></pre>
-<h2 id="相关题目推荐"><a href="#相关题目推荐" class="headerlink" title="相关题目推荐"></a>相关题目推荐</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/" style="text-decoration: none;">34. 在排序数组中查找元素的第一个和最后一个位置</a></li>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-insert-position/" style="text-decoration: none;">35. 搜索插入位置</a></li>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sqrtx/" style="text-decoration: none;">69.x 的平方根</a></li>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-perfect-square/" style="text-decoration: none;">367.有效的完全平方数</a></li>
-</ul>
-
+                        
+                        <span class="tags">
+                            <span class="icon">
+                                <a-icon type="tags" theme="filled" />
+                            </span>
+                            
+                            <span class="tag">
+                                
+                                <a href="/tags/算法" style=color:#ff7d73>
+                                    算法
+                                </a>
+                            </span>
+                            
+                            <span class="tag">
+                                
+                                <a href="/tags/LeetCode" style=color:#03a9f4>
+                                    LeetCode
+                                </a>
+                            </span>
+                            
+                        </span>
+                        
+                    </div>
+                </a-card>
+            </a-timeline-item>
+        </a-timeline>
+        
     </div>
-
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <div id="comment">
-        <div id="gitalk-container">
-        </div>
-    </div>
-    
+    <script>
+        new Vue({
+            el: '#archives'
+        })
+    </script>
 </div>
                      
 <footer id="footer">
@@ -334,21 +310,6 @@ public:
             }
         }
     })
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    const gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: 'Leven0212.github.io',      // The repository of store comments,
-        owner: 'Leven0212',
-        admin: ['Leven0212'],
-        language: 'zh-CN',
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: true  // Facebook-like distraction free mode
-    })
-    gitalk.render('gitalk-container')
 </script>
 
     <!-- 鼠标滑动彩色特效 -->
