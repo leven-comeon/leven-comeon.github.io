@@ -512,7 +512,7 @@
 <h2 id="三、检测页面是否访问（难度：hard）"><a href="#三、检测页面是否访问（难度：hard）" class="headerlink" title="三、检测页面是否访问（难度：hard）"></a>三、检测页面是否访问（难度：hard）</h2><blockquote>
 <p>实验要求实现一个系统调用 sys_pgaccess，其会从一个虚拟地址对应的 PTE 开始，往下搜索一定数量的被访问（read/write）过的页表，并把结果通过 mask 的方式返回给用户。每当 sys_pgacess 调用一次，页表被访问标志就要清 0。</p>
 </blockquote>
-<h2 id="1、解题思路-1"><a href="#1、解题思路-1" class="headerlink" title="1、解题思路"></a>1、解题思路</h2><p>该题的关键是要解决两个问题：怎么知道哪些页表被访问了、怎么通过虚拟地址依次遍历后续 <code>PTE</code>？</p>
+<h3 id="1、解题思路-1"><a href="#1、解题思路-1" class="headerlink" title="1、解题思路"></a>1、解题思路</h3><p>该题的关键是要解决两个问题：怎么知道哪些页表被访问了、怎么通过虚拟地址依次遍历后续 <code>PTE</code>？</p>
 <ul>
 <li>怎么知道哪些页表被访问了?<ul>
 <li>检查页表中的<code>PTE_A</code> 标识位。该位被置 1 则说明被访问过，该位被置 0 则说明没被访问过。</li>
