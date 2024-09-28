@@ -79,31 +79,6 @@
     
     
     <entry>
-      <title>美团面经</title>
-      <link href="/2024/09/28/mian-jing/mei-tuan-mian-jing/"/>
-      <url>/2024/09/28/mian-jing/mei-tuan-mian-jing/</url>
-      
-        <content type="html"><![CDATA[<h2 id="大模型infra实习生-一面"><a href="#大模型infra实习生-一面" class="headerlink" title="大模型infra实习生 一面"></a>大模型infra实习生 一面</h2><blockquote><p>2024.4.22面试 约50min 一面过</p></blockquote><h3 id="1、简历拷打"><a href="#1、简历拷打" class="headerlink" title="1、简历拷打"></a>1、简历拷打</h3><h4 id="（1）基于文本提示的图像编辑系统-项目"><a href="#（1）基于文本提示的图像编辑系统-项目" class="headerlink" title="（1）基于文本提示的图像编辑系统 项目"></a>（1）基于文本提示的图像编辑系统 项目</h4><ul><li>我对你的这个项目很感兴趣，你讲一下吧</li><li>StyleGAN和CLIP是怎么进行交互从而实现文本提示编辑的？</li><li>训练数据量多大？怎么进行训练的?</li><li>网站的前后端分别使用什么编写的？</li><li>triton的原理有了解吗？</li><li>你这个模型算是小模型，大模型的训练不能直接单卡训练，有了解大模型训练相关技术吗？</li><li>deepspeed原理有了解吗？</li></ul><h4 id="（2）基于FFT进行卷积加速的并行算法实现-项目"><a href="#（2）基于FFT进行卷积加速的并行算法实现-项目" class="headerlink" title="（2）基于FFT进行卷积加速的并行算法实现 项目"></a>（2）基于FFT进行卷积加速的并行算法实现 项目</h4><ul><li>讲一下这个项目吧</li><li>加速的技巧有哪些?</li><li>这个算法有实际应用吗？</li></ul><h4 id="（3）系统文件备份软件-项目"><a href="#（3）系统文件备份软件-项目" class="headerlink" title="（3）系统文件备份软件 项目"></a>（3）系统文件备份软件 项目</h4><ul><li>讲一下这个项目</li><li>哈夫曼编码使用了什么库吗还是手写？</li></ul><h3 id="2、大模型八股"><a href="#2、大模型八股" class="headerlink" title="2、大模型八股"></a>2、大模型八股</h3><ul><li>有了解现在市场上的大模型吗？包括国内的、国外的</li><li>你用下来的感受如何？</li><li>大模型比小模型性能强的原因有哪些？</li><li>多模态大模型有了解过吗?</li><li>大模型的结构有了解吗？</li><li>能讲一下Transformer的结构吗？</li><li>你知道在Transformer之前，人们最常使用的具有长短期记忆功能的网络有哪些吗？</li><li>你知道Transformer比LSTM的优势在哪吗？</li><li>你说你以后想做模型推理优化，你了解推理优化方法吗?</li></ul><h3 id="3、算法题"><a href="#3、算法题" class="headerlink" title="3、算法题"></a>3、算法题</h3><p><a href="https://leetcode.cn/problems/reverse-linked-list-ii/description/">92. 反转链表 II</a><br>中等难度，可以看作反转整个链表题目的进阶</p><ul><li>创建虚拟头结点，提前用全局变量<code>pre</code>保存开始反转的前一个节点</li><li>与反转整个链表不同，递归到最后需要用全局变量<code>tail</code>保存最后一个节点的下一个节点</li><li>递归进行反转，递归过程中将<code>head-&gt;next</code>设置为<code>tail</code>而非<code>null</code></li><li>将递归返回赋值给<code>pre-&gt;next</code></li><li>返回虚拟头结点的<code>next</code>即可</li></ul><h2 id="大模型infra实习生-二面"><a href="#大模型infra实习生-二面" class="headerlink" title="大模型infra实习生 二面"></a>大模型infra实习生 二面</h2><blockquote><p>2024.4.25面试 约40min 二面过</p></blockquote><h3 id="1、算法题"><a href="#1、算法题" class="headerlink" title="1、算法题"></a>1、算法题</h3><h4 id="（1）求所有根节点到叶节点的路径总和"><a href="#（1）求所有根节点到叶节点的路径总和" class="headerlink" title="（1）求所有根节点到叶节点的路径总和"></a>（1）求所有根节点到叶节点的路径总和</h4><p>假设路径为<code>1-&gt;2-&gt;3</code>，则将该路径值看作<code>123</code>，求所有路径值的总和</p><ul><li>dfs遍历路径值</li><li>对得到的路径值求和</li></ul><h4 id="（2）删除链表中所有重复节点"><a href="#（2）删除链表中所有重复节点" class="headerlink" title="（2）删除链表中所有重复节点"></a>（2）删除链表中所有重复节点</h4><p><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/">82. 删除排序链表中的重复元素 II</a></p><ul><li>创建虚拟头结点进行简化</li><li>双指针进行循环删除</li></ul><h3 id="2、基础八股"><a href="#2、基础八股" class="headerlink" title="2、基础八股"></a>2、基础八股</h3><ul><li><code>vector/map/unordered_map/list</code>的底层实现原理以及相应的访存时间复杂度，以及迭代器的变化规则</li><li>红黑树怎么保持平衡的？</li><li><code>top/grep/ls/ps/awk</code>分别是干什么的?</li><li>对<code>Transformer</code>了解吗？讲一下它的结构吧（包含了压力测试，我说完了，他问我你确定？）</li><li>讲一下C++中的多态实现</li><li>什么是虚函数？</li><li>对多线程编程了解还是对网络编程了解？（由于我对二者都不太了解，所以后面没有问相关问题）</li></ul><h3 id="3、简历拷打"><a href="#3、简历拷打" class="headerlink" title="3、简历拷打"></a>3、简历拷打</h3><h4 id="（1）基于FFT进行卷积加速的并行算法实现-项目"><a href="#（1）基于FFT进行卷积加速的并行算法实现-项目" class="headerlink" title="（1）基于FFT进行卷积加速的并行算法实现 项目"></a>（1）基于FFT进行卷积加速的并行算法实现 项目</h4><ul><li>讲一下这个项目吧</li><li>为什么想到要用cuda进行加速</li><li>cuda streams中，异步搬运数据会占用线程吗？</li></ul><h2 id="大模型infra实习生-offer-2024-4-28-最终去向，5-13入职"><a href="#大模型infra实习生-offer-2024-4-28-最终去向，5-13入职" class="headerlink" title="大模型infra实习生 offer 2024.4.28 最终去向，5.13入职"></a>大模型infra实习生 offer 2024.4.28 最终去向，5.13入职</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> 面经 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 面试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>栈和队列解题总结</title>
       <link href="/2024/09/28/dai-ma-sui-xiang-lu/zhan-he-dui-lie-jie-ti-zong-jie/"/>
       <url>/2024/09/28/dai-ma-sui-xiang-lu/zhan-he-dui-lie-jie-ti-zong-jie/</url>
@@ -134,6 +109,31 @@
       <url>/2024/09/28/mian-jing/kuai-shou-mian-jing/</url>
       
         <content type="html"><![CDATA[<h2 id="机器学习系统平台开发-一面"><a href="#机器学习系统平台开发-一面" class="headerlink" title="机器学习系统平台开发 一面"></a>机器学习系统平台开发 一面</h2><blockquote><p>2024.4.18面试 约1h30min 一面挂</p></blockquote><h3 id="1、算法题"><a href="#1、算法题" class="headerlink" title="1、算法题"></a>1、算法题</h3><p><a href="https://leetcode.cn/problems/lru-cache/description/">146. LRU缓存</a><br>中等难度，重点在于对双向链表的快速访问，使用<strong>unordered_map</strong>可以实现时间复杂度和空间复杂度都为$O(1)$</p><h3 id="2、C-八股"><a href="#2、C-八股" class="headerlink" title="2、C++八股"></a>2、C++八股</h3><ul><li>STL中容器的底层原理及其时间复杂度</li><li>模板类的实现</li><li>如果模板类的具体实现类是很占内存的结构体，如何修改参数传递来优化时间和空间？</li><li>右值引用与转移语义</li><li>docker与虚拟机的区别</li></ul><h3 id="3、简历内容拷问"><a href="#3、简历内容拷问" class="headerlink" title="3、简历内容拷问"></a>3、简历内容拷问</h3><h4 id="（1）基于FFT进行卷积加速的并行算法实现-项目"><a href="#（1）基于FFT进行卷积加速的并行算法实现-项目" class="headerlink" title="（1）基于FFT进行卷积加速的并行算法实现 项目"></a>（1）基于FFT进行卷积加速的并行算法实现 项目</h4><ul><li>这个项目的意义是什么？</li><li>使用CUDA加速用到哪些技巧？</li><li>哪些地方用到了共享内存？</li><li>在这个项目中，共享内存为什么能加速FFT计算?</li><li>算法正确性是怎么进行测试的？</li><li>测试的最大数据量有多大，如果数据量超过CUDA显存了还有什么优化手段？</li><li>听起来你的工作量就是将C++实现的FFT算法转换为了CUDA代码，然后使用共享内存进行加速，为什么会花了将近半年的时间?</li></ul><h4 id="（2）基于文本提示的图像编辑系统-项目"><a href="#（2）基于文本提示的图像编辑系统-项目" class="headerlink" title="（2）基于文本提示的图像编辑系统 项目"></a>（2）基于文本提示的图像编辑系统 项目</h4><ul><li>讲一下这个项目的内容</li><li>为什么要重新训练StyleGAN？</li><li>推理优化主要用了什么，为什么会快？</li><li>在部署过程中有遇到什么困难吗？</li></ul><h4 id="（3）系统文件备份软件-项目"><a href="#（3）系统文件备份软件-项目" class="headerlink" title="（3）系统文件备份软件 项目"></a>（3）系统文件备份软件 项目</h4><ul><li>怎么读目录树的？</li><li>怎么写入文件的？用了什么API？</li><li>网盘功能是怎么实现的？</li><li>如果文件大小超过电脑内存，该怎么读文件，有什么优化策略？</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面经 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>美团面经</title>
+      <link href="/2024/09/28/mian-jing/mei-tuan-mian-jing/"/>
+      <url>/2024/09/28/mian-jing/mei-tuan-mian-jing/</url>
+      
+        <content type="html"><![CDATA[<h2 id="大模型infra实习生-一面"><a href="#大模型infra实习生-一面" class="headerlink" title="大模型infra实习生 一面"></a>大模型infra实习生 一面</h2><blockquote><p>2024.4.22面试 约50min 一面过</p></blockquote><h3 id="1、简历拷打"><a href="#1、简历拷打" class="headerlink" title="1、简历拷打"></a>1、简历拷打</h3><h4 id="（1）基于文本提示的图像编辑系统-项目"><a href="#（1）基于文本提示的图像编辑系统-项目" class="headerlink" title="（1）基于文本提示的图像编辑系统 项目"></a>（1）基于文本提示的图像编辑系统 项目</h4><ul><li>我对你的这个项目很感兴趣，你讲一下吧</li><li>StyleGAN和CLIP是怎么进行交互从而实现文本提示编辑的？</li><li>训练数据量多大？怎么进行训练的?</li><li>网站的前后端分别使用什么编写的？</li><li>triton的原理有了解吗？</li><li>你这个模型算是小模型，大模型的训练不能直接单卡训练，有了解大模型训练相关技术吗？</li><li>deepspeed原理有了解吗？</li></ul><h4 id="（2）基于FFT进行卷积加速的并行算法实现-项目"><a href="#（2）基于FFT进行卷积加速的并行算法实现-项目" class="headerlink" title="（2）基于FFT进行卷积加速的并行算法实现 项目"></a>（2）基于FFT进行卷积加速的并行算法实现 项目</h4><ul><li>讲一下这个项目吧</li><li>加速的技巧有哪些?</li><li>这个算法有实际应用吗？</li></ul><h4 id="（3）系统文件备份软件-项目"><a href="#（3）系统文件备份软件-项目" class="headerlink" title="（3）系统文件备份软件 项目"></a>（3）系统文件备份软件 项目</h4><ul><li>讲一下这个项目</li><li>哈夫曼编码使用了什么库吗还是手写？</li></ul><h3 id="2、大模型八股"><a href="#2、大模型八股" class="headerlink" title="2、大模型八股"></a>2、大模型八股</h3><ul><li>有了解现在市场上的大模型吗？包括国内的、国外的</li><li>你用下来的感受如何？</li><li>大模型比小模型性能强的原因有哪些？</li><li>多模态大模型有了解过吗?</li><li>大模型的结构有了解吗？</li><li>能讲一下Transformer的结构吗？</li><li>你知道在Transformer之前，人们最常使用的具有长短期记忆功能的网络有哪些吗？</li><li>你知道Transformer比LSTM的优势在哪吗？</li><li>你说你以后想做模型推理优化，你了解推理优化方法吗?</li></ul><h3 id="3、算法题"><a href="#3、算法题" class="headerlink" title="3、算法题"></a>3、算法题</h3><p><a href="https://leetcode.cn/problems/reverse-linked-list-ii/description/">92. 反转链表 II</a><br>中等难度，可以看作反转整个链表题目的进阶</p><ul><li>创建虚拟头结点，提前用全局变量<code>pre</code>保存开始反转的前一个节点</li><li>与反转整个链表不同，递归到最后需要用全局变量<code>tail</code>保存最后一个节点的下一个节点</li><li>递归进行反转，递归过程中将<code>head-&gt;next</code>设置为<code>tail</code>而非<code>null</code></li><li>将递归返回赋值给<code>pre-&gt;next</code></li><li>返回虚拟头结点的<code>next</code>即可</li></ul><h2 id="大模型infra实习生-二面"><a href="#大模型infra实习生-二面" class="headerlink" title="大模型infra实习生 二面"></a>大模型infra实习生 二面</h2><blockquote><p>2024.4.25面试 约40min 二面过</p></blockquote><h3 id="1、算法题"><a href="#1、算法题" class="headerlink" title="1、算法题"></a>1、算法题</h3><h4 id="（1）求所有根节点到叶节点的路径总和"><a href="#（1）求所有根节点到叶节点的路径总和" class="headerlink" title="（1）求所有根节点到叶节点的路径总和"></a>（1）求所有根节点到叶节点的路径总和</h4><p>假设路径为<code>1-&gt;2-&gt;3</code>，则将该路径值看作<code>123</code>，求所有路径值的总和</p><ul><li>dfs遍历路径值</li><li>对得到的路径值求和</li></ul><h4 id="（2）删除链表中所有重复节点"><a href="#（2）删除链表中所有重复节点" class="headerlink" title="（2）删除链表中所有重复节点"></a>（2）删除链表中所有重复节点</h4><p><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/">82. 删除排序链表中的重复元素 II</a></p><ul><li>创建虚拟头结点进行简化</li><li>双指针进行循环删除</li></ul><h3 id="2、基础八股"><a href="#2、基础八股" class="headerlink" title="2、基础八股"></a>2、基础八股</h3><ul><li><code>vector/map/unordered_map/list</code>的底层实现原理以及相应的访存时间复杂度，以及迭代器的变化规则</li><li>红黑树怎么保持平衡的？</li><li><code>top/grep/ls/ps/awk</code>分别是干什么的?</li><li>对<code>Transformer</code>了解吗？讲一下它的结构吧（包含了压力测试，我说完了，他问我你确定？）</li><li>讲一下C++中的多态实现</li><li>什么是虚函数？</li><li>对多线程编程了解还是对网络编程了解？（由于我对二者都不太了解，所以后面没有问相关问题）</li></ul><h3 id="3、简历拷打"><a href="#3、简历拷打" class="headerlink" title="3、简历拷打"></a>3、简历拷打</h3><h4 id="（1）基于FFT进行卷积加速的并行算法实现-项目"><a href="#（1）基于FFT进行卷积加速的并行算法实现-项目" class="headerlink" title="（1）基于FFT进行卷积加速的并行算法实现 项目"></a>（1）基于FFT进行卷积加速的并行算法实现 项目</h4><ul><li>讲一下这个项目吧</li><li>为什么想到要用cuda进行加速</li><li>cuda streams中，异步搬运数据会占用线程吗？</li></ul><h2 id="大模型infra实习生-offer-2024-4-28-最终去向，5-13入职"><a href="#大模型infra实习生-offer-2024-4-28-最终去向，5-13入职" class="headerlink" title="大模型infra实习生 offer 2024.4.28 最终去向，5.13入职"></a>大模型infra实习生 offer 2024.4.28 最终去向，5.13入职</h2>]]></content>
       
       
       <categories>
