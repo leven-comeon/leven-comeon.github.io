@@ -4,8 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="个人简历, Leven">
-    <meta name="description" content="Hi, here is main page of leven">
+    <meta name="keywords" content="bilibili面经, Leven">
+    <meta name="description" content="开发工程师（人工智能平台部）【2026届】 一面
+2025.3.13 面试 约50min 一面过
+
+1、简历拷打(1) 字节跳动实习经历
+介绍一下这段实习的内容
+能讲一下模型结构吗？
+答：保密协议原因，实习生无权访问最新模型架构，旧版模型结">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人简历 | Leven</title>
+    <title>bilibili面经 | Leven</title>
     <link rel="icon" type="image/jpeg" href="/medias/logo.jpeg">
     
 
@@ -371,12 +377,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">个人简历</h1>
+                    <h1 class="description center-align post-title">bilibili面经</h1>
                 </div>
             </div>
         </div>
@@ -398,12 +404,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
+                                面经
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -412,28 +431,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-29
+                    2025-03-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-29
+                    2025-03-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    849
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -451,11 +470,59 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="row">
-    <embed src="./resume.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
+                <h2 id="开发工程师（人工智能平台部）【2026届】-一面"><a href="#开发工程师（人工智能平台部）【2026届】-一面" class="headerlink" title="开发工程师（人工智能平台部）【2026届】 一面"></a>开发工程师（人工智能平台部）【2026届】 一面</h2><blockquote>
+<p>2025.3.13 面试 约50min 一面过</p>
+</blockquote>
+<h3 id="1、简历拷打"><a href="#1、简历拷打" class="headerlink" title="1、简历拷打"></a>1、简历拷打</h3><h4 id="1-字节跳动实习经历"><a href="#1-字节跳动实习经历" class="headerlink" title="(1) 字节跳动实习经历"></a>(1) 字节跳动实习经历</h4><ul>
+<li>介绍一下这段实习的内容</li>
+<li>能讲一下模型结构吗？<ul>
+<li>答：保密协议原因，实习生无权访问最新模型架构，旧版模型结构是：xxxxxxx</li>
+</ul>
+</li>
+<li>你融合算子，是怎么知道要融合这几个的？<ul>
+<li>答：旧版模型能接触到，通过 profile 工具导出 trace 图，分析找出可融合算子。</li>
+</ul>
+</li>
+<li>都是在什么卡上进行的调优？</li>
+<li>page attention 优化项目能否详细讲？</li>
+<li>你们的 video caption 是什么样的模型？传统 video caption 可能只是使用 vit + cnn 提取特征然后使用 lstm 进行解码，然后现在有些模型是直接将输入特征拉平然后传入 LLM 进行生成，所以你们的模型是什么样的？<ul>
+<li>答：我们的 video caption 是通过 ViT 将图像切成 patch 并拉平，然后还要从原始图像中提取出一个全局图像信息特征，作为 mask token。然后在 LLM 生成过程中，每次使用这个 mask token 拼接在输入序列后，使用这个全局信息特征作为请求计算得到的 logits 作为生成结果。在加速优化过程中，我们跟算法沟通，能否去掉这个 mask token 重训一版，算法表示可以，但懒得重训，因此我们采用优化 page attention 的方式来提升吞吐。</li>
+</ul>
+</li>
+<li>优化 tensorrt-llm 时，你们是通过改 plugin 实现的吗？还是怎么实现的？<ul>
+<li>答：我们更换 plugin，然后由于 plugin 只是计算 attention，因此我们在进入 plugin 前先对 qkv 做 rope，将加了 rope 后的 qkv 送入 plugin 进行计算。</li>
+</ul>
+</li>
+<li>你觉得融合四个算子时，为什么提升这么大？<ul>
+<li>答：减少了全局内存访问</li>
+</ul>
+</li>
+<li>为什么不能直接用现有的融合算子实现？<ul>
+<li>答：DiT 视频生成模型需要将图像和 text 的 embedding 进行拼接后再做后续操作，然后图像做 rope，文本不做 rope，因此不能提前拼接，所以现有的融合算子没有相关的实现。</li>
+</ul>
+</li>
+<li>视频帧做 rope 时，时序信息怎么维持？<ul>
+<li>答：在视频生成模型中，使用 3D rope，在计算 rotary embedding 时，需要的参数除了2d rope中的 h、w 外，还需要时序编号 t。因此在旋转编码中已经融入了时序信息。</li>
+</ul>
+</li>
+<li>视频生成模型有多大？<ul>
+<li>答：保密协议原因，具体数值不详。</li>
+</ul>
+</li>
+<li>融合算子的时候是否考虑了 cp 或 sp?<ul>
+<li>不需要，因为我融合的这几个算子都是 element-wise 的，序列并行并不会造成计算结果的错误以及通信量的增加。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-美团实习经历"><a href="#2-美团实习经历" class="headerlink" title="(2) 美团实习经历"></a>(2) 美团实习经历</h4><ul>
+<li>原生多模态是指什么？</li>
+<li>为什么要改 flash attention？</li>
+<li>为什么不用 varlen 实现？<ul>
+<li>用 varlen 也只能是不同长度的序列可以一起计算 attention，但他们使用的 attention 类型需要是一样的。我们的 mask 需要是不同部分使用 attention 类型是不同的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、算法题"><a href="#2、算法题" class="headerlink" title="2、算法题"></a>2、算法题</h3><p>给定一个数组 nums 和一个目标值 target，m 次查询，每次给定一个区间 [l, r]，求在区间范围内是否存在两个数的异或等于 target。</p>
 
                 
             </div>
@@ -482,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://leven-comeon.github.io/cv/index.html">https://leven-comeon.github.io/cv/index.html</a>
+                    <a href="https://leven-comeon.github.io/2025/03/18/mian-jing/bilibili-mian-jing/">https://leven-comeon.github.io/2025/03/18/mian-jing/bilibili-mian-jing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -519,7 +586,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -595,7 +666,7 @@
         repo: 'leven-comeon.github.io',
         owner: 'leven-comeon',
         admin: "leven-comeon",
-        id: '2024-04-29T21-48-29',
+        id: '2025-03-18T20-40-33',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -628,13 +699,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/cv/index.html">
+                <a href="/2025/03/18/mian-jing/bilibili-mian-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="个人简历">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="bilibili面经">
                         
-                        <span class="card-title">个人简历</span>
+                        <span class="card-title">bilibili面经</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,17 +716,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-18
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            leven
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
+                                    面经
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -663,16 +746,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/cv/index.html">
+                <a href="/2025/03/18/mian-jing/xiao-hong-shu-mian-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="个人简历">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="小红书面经">
                         
-                        <span class="card-title">个人简历</span>
+                        <span class="card-title">小红书面经</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -683,17 +766,28 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-18
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            leven
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
+                                    面经
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
