@@ -436,21 +436,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-29
+                    2025-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    447
+                    883
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -500,6 +500,49 @@
 <li>网盘功能是怎么实现的？</li>
 <li>如果文件大小超过电脑内存，该怎么读文件，有什么优化策略？</li>
 </ul>
+<h2 id="【暑期实习】大模型推理-训练引擎研发工程师-一面"><a href="#【暑期实习】大模型推理-训练引擎研发工程师-一面" class="headerlink" title="【暑期实习】大模型推理/训练引擎研发工程师 一面"></a>【暑期实习】大模型推理/训练引擎研发工程师 一面</h2><blockquote>
+<p>2025.03.26面试 约 40 min 一面过</p>
+</blockquote>
+<h3 id="1、简历拷打"><a href="#1、简历拷打" class="headerlink" title="1、简历拷打"></a>1、简历拷打</h3><h4 id="（1）字节跳动实习经历"><a href="#（1）字节跳动实习经历" class="headerlink" title="（1）字节跳动实习经历"></a>（1）字节跳动实习经历</h4><ul>
+<li>介绍一下模型结构、以及参数量有多大？</li>
+<li>选用了什么推理方案？</li>
+<li>相当于单机单卡去推吗？<ul>
+<li>没有，使用了多大，使用 ulysses 进行推理</li>
+</ul>
+</li>
+<li>详细讲一下激活权重量化和 dit cache？</li>
+<li>怎么评价量化效果？</li>
+<li>这样的 dit cache 在显存节省上有优势吗？</li>
+<li>介绍一下 ulysses 通信量？<ul>
+<li>核心是 all to all 通信量（当时没能答上来）</li>
+</ul>
+</li>
+<li>all to all 有做 overlap 吗？如果要做，怎么设计？</li>
+<li>介绍一下 ulysses 怎么使用 all to all？你能想到什么 overlap 方法？</li>
+<li>介绍一下双向注意力修改这个项目？</li>
+<li>dit 推理和 LLM 推理的最大区别是什么？<ul>
+<li>dit 全是 compute bound，而 LLM 分为 prefill 和 decode 两个阶段，其中 prefill 是 compute bound，decode 是 I/O bound</li>
+</ul>
+</li>
+<li>mmdit 有对 text 分支进行特殊优化吗？因为在 video generation model 中，text 分支的 seq_len 是比较小的，所以可以对 text 分支进行特殊优化？</li>
+<li>为什么只做了 element-wise 融合？对 GEMM 没做融合吗？</li>
+<li>有了解过 dit 训练过程吗？</li>
+</ul>
+<h4 id="（2）美团实习经历"><a href="#（2）美团实习经历" class="headerlink" title="（2）美团实习经历"></a>（2）美团实习经历</h4><ul>
+<li>介绍一下 flash attention 优化这个项目？</li>
+<li>了解 flash attention 原理吗？为什么比 native attention 又省显存又快？</li>
+<li>使用 Tiling 方式计算 attention，怎么保证 softmax 的正确性？<ul>
+<li>核心是介绍 online softmax</li>
+</ul>
+</li>
+<li>你会手写算子吗？</li>
+<li>你能介绍下 TP 怎么实现吗？</li>
+<li>TP 里有一个 sequence parallel，你有了解吗？<ul>
+<li>没有了解过</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、代码题"><a href="#2、代码题" class="headerlink" title="2、代码题"></a>2、代码题</h3><p>用 triton 写一个简单矩阵乘，MxN 和 NxK 矩阵乘</p>
 
                 
             </div>
