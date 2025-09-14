@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="en ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leven || a blog of newbie</title>
+    <meta name="author" content="leven">
+    <meta name="description" content="Hi, here is main page of leven ">
+    <meta name="keywords" content=" ">
+    <link rel="icon" href="/images/头像.jpg">
+    <link rel="stylesheet" href="/css/antd.min.css">
+    
+    <link rel="stylesheet" href="/css/full-theme.css">
+    
+    <script src="/js/vue.js"></script>
+    <script src="/js/antd.min.js"></script>
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+
+    <div id="loading"
+        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
+        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div
+            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
+            <div id="loadcontent"
+                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
+                <div>
+                    <h2>LOADING...</h2>
+                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
+                    <div>
+                        <img src="/dancingkitty.gif" alt="loading">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layout">
+        <transition name="into">
+            <div v-show="show_page" style="display: none;">
+                <div id="menu_show">
+                     
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Leven</span>
+        </a>
+        
+        <a href="/">
+            <span>
+                <a-icon type="home" theme="filled" />
+            </span>
+            <span>主页</span>
+        </a>
+        
+        <a href="/archives">
+            <span>
+                <a-icon type="folder" theme="filled" />
+            </span>
+            <span>文章</span>
+        </a>
+        
+        <a href="/categories">
+            <span>
+                <a-icon type="book" theme="filled" />
+            </span>
+            <span>类别</span>
+        </a>
+        
+        <a href="/tags">
+            <span>
+                <a-icon type="tags" theme="filled" />
+            </span>
+            <span>标签</span>
+        </a>
+        
+        <a href="/about">
+            <span>
+                <a-icon type="idcard" theme="filled" />
+            </span>
+            <span>关于</span>
+        </a>
+        
+    </div>
+
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div :class="'title'" @click="menu_show=!menu_show">
+            <span style="margin-right: 10px;">
+                <a-icon type="appstore" theme="filled" />
+            </span>
+            <span>Leven</span>
+        </div>
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="home" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">主页</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="folder" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">文章</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="book" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">类别</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="tags" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">标签</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="idcard" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">关于</div>
+                </div>
+            </a>
+            
+        </div>
+        <div class="curtain" v-show="menu_show"></div>
+    </div>
+
+</nav>
+                </div>
+
+                <div id="main">
+                    <div id="home-head" style=background-image:url('home.jpg')>
+    <script>
+        var menu = document.getElementById("menu")
+        menu.className += " menu-color"
+    </script>
+     
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Leven</h1>
+                <h3>a blog of newbie</h3>
+                <h5>Hi, here is main page of leven</h5>
+            </div>
+        </span>
+    </div>
+     
+</div>
+
+
+
+<div id="home-posts-wrap" class=>
+    <div id="home-posts">
+
+        <div id="posts">
+            
+
+<div class="post">
+
+    <a href="/2023/12/14/代码随想录/栈和队列解题总结/">
+        <h2>
+            栈和队列解题总结
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/14
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h2 id="栈经典题目"><a href="#栈经典题目" class="headerlink" title="栈经典题目"></a>栈经典题目</h2><h3 id="栈在系统中的应用"><a href="#栈在系统中的应用" class="headerlink" title="栈在系统中的应用"></a>栈在系统中的应用</h3>
+            
+        </div>
+    </div>
+
+    <div class="post-tags">
+        
+        
+    </div>
+
+    <a href="/2023/12/14/代码随想录/栈和队列解题总结/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
+    <a href="/2023/12/14/代码随想录/哈希表解题总结/">
+        <h2>
+            哈希表解题总结
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/14
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h2 id="哈希表经典题目"><a href="#哈希表经典题目" class="headerlink" title="哈希表经典题目"></a>哈希表经典题目</h2><h3 id="数组作为哈希表"><a href="#数组作为哈希表" class="headerlink" title="数组作为哈希表"></a>数组作为哈希表</h3><p>一些应用场景就是为数组量身定做的。</p>
+<p>在<code>有效的字母异位词</code>中，我们提到了数组就是简单的哈希表，但是数组的大小是受限的！这道题目包含小写字母，那么使用数组来做哈希最合适不过。</p>
+<p>在<code>赎金信</code>中同样要求只有小写字母，那么就给我们浓浓的暗示，用数组！本题和 有效的字母异位词 很像，有效的字母异位词 是求 字符串a 和 字符串b 是否可以相互组成，在 赎金信 中是求字符串a能否组成字符串b，而不用管 字符串b 能不能组成 字符串a。</p>
+<p>上面两道题目用map确实可以，但使用map的空间消耗要比数组大一些，因为map要维护红黑树或者符号表，而且还要做哈希函数的运算。所以数组更加简单直接有效！</p>
+<h3 id="set作为哈希表"><a href="#set作为哈希表" class="headerlink" title="set作为哈希表"></a>set作为哈希表</h3><p>在<code>两个数组的交集</code>中我们给出了什么时候用数组就不行了，需要用set。这道题目没有限制数值的大小，就无法使用数组来做哈希表了。</p>
+<p>主要因为如下两点：</p>
+<ul>
+<li>数组的大小是有限的，受到系统栈空间（不是数据结构的栈）的限制。</li>
+<li>如果数组空间够大，但哈希值比较少、特别分散、跨度非常大，使用数组就造成空间的极大浪费。所以此时一样的做映射的话，就可以使用set了。</li>
+</ul>
+<p>关于set，C++ 给提供了如下三种可用的数据结构：</p>
+<ul>
+<li>std::set</li>
+<li>std::multiset</li>
+<li>std::unordered_set</li>
+</ul>
+<p>std::set 和 std::multiset 底层实现都是红黑树，std::unordered_set 的底层实现是哈希，使用 unordered_set 读写效率是最高的，本题并不需要对数据进行排序，而且还不要让数据重复，所以选择 unordered_set。</p>
+<p>在<code>快乐数</code>中，我们再次使用了 unordered_set 来判断一个数是否重复出现过。</p>
+<h3 id="map作为哈希表"><a href="#map作为哈希表" class="headerlink" title="map作为哈希表"></a>map作为哈希表</h3><p>在<code>两数之和</code>中map正式登场。</p>
+<p>来说一说：使用数组和set来做哈希法的局限。</p>
+<ul>
+<li>数组的大小是受限制的，而且如果元素很少，而哈希值太大会造成内存空间的浪费。</li>
+<li>set是一个集合，里面放的元素只能是一个key，而两数之和这道题目，不仅要判断y是否存在而且还要记录y的下标位置，因为要返回x 和 y的下标。所以set 也不能用。</li>
+<li>map是一种&lt;key, value&gt;的结构，本题可以用key保存数值，用value在保存数值所在的下标。所以使用map最为合适。</li>
+</ul>
+<p>C++提供如下三种map：</p>
+<ul>
+<li>std::map</li>
+<li>std::multimap</li>
+<li>std::unordered_map</li>
+</ul>
+<p>std::unordered_map 底层实现为哈希，std::map 和std::multimap 的底层实现是红黑树。</p>
+<p>同理，std::map 和 std::multimap 的 key 也是有序的，两数之和 中并不需要key有序，选择 std::unordered_map 效率更高！</p>
+<p>在<code>四数相加 II</code>中我们提到了其实需要哈希的地方都能找到map的身影。</p>
+<p>本题咋眼一看好像和 四数之和，三数之和 差不多，其实差很多！</p>
+<p>关键差别是本题为四个独立的数组，只要找到 A[i] + B[j] + C[k] + D[l] &#x3D; 0 就可以，不用考虑重复问题，而 四数之和，三数之和 是一个数组（集合）里找到和为0的组合，可就难很多了！</p>
+<p>用哈希法解决了两数之和，很多同学会感觉用哈希法也可以解决 三数之和，四数之和。</p>
+<p>其实是可以解决，但是非常麻烦，需要去重导致代码效率很低。</p>
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>在<code>三数之和</code>中我给出了 双指针 解法，大家就可以体会到，使用哈希法还是比较麻烦的。</p>
+<p>所以 四数之和，三数之和 都推荐使用双指针法！</p>
+
+            
+        </div>
+    </div>
+
+    <div class="post-tags">
+        
+        
+    </div>
+
+    <a href="/2023/12/14/代码随想录/哈希表解题总结/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
+    <a href="/2023/12/14/代码随想录/字符串解题总结/">
+        <h2>
+            字符串解题总结
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/14
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h2 id="字符串经典题目"><a href="#字符串经典题目" class="headerlink" title="字符串经典题目"></a>字符串经典题目</h2><h3 id="双指针法"><a href="#双指针法" class="headerlink" title="双指针法"></a>双指针法</h3><p>在<code>反转字符串</code>，我们使用双指针法实现了反转字符串的操作，双指针法在数组，链表和字符串中很常用。</p>
+<p>接着在字符串：<code>替换数字</code>，同样还是使用双指针法在时间复杂度$O(n)$的情况下完成替换空格。</p>
+<p>其实很多数组填充类的问题，都可以先预先给数组扩容带填充后的大小，然后在从后向前进行操作。</p>
+<p>那么针对数组删除操作的问题，其实在<code>移除元素</code>中就已经提到了使用双指针法进行移除操作。</p>
+<p>同样的道理在<code>翻转字符串中的单词</code>中我们使用$O(n)$的时间复杂度，完成了删除冗余空格。</p>
+<h3 id="反转系列"><a href="#反转系列" class="headerlink" title="反转系列"></a>反转系列</h3><p>在反转上还可以在加一些玩法，其实考察的是对代码的掌控能力。</p>
+<p><code>反转字符串II</code>中，一些同学可能为了处理逻辑：每隔2k个字符的前k的字符，写了一堆逻辑代码或者再搞一个计数器，来统计2k，再统计前k个字符。其实当需要固定规律一段一段去处理字符串的时候，要想想在在for循环的表达式上做做文章。只要让 i +&#x3D; (2 * k) ，i 每次移动 2 * k 就可以了，然后判断是否需要有反转的区间。因为要找的也就是每2 * k 区间的起点，这样写程序会高效很多。</p>
+<p>在<code>翻转字符串里的单词</code>中要求翻转字符串里的单词，这道题目可以说是综合考察了字符串的多种操作。是考察字符串的好题。这道题目通过 先整体反转再局部反转，实现了反转字符串里的单词。</p>
+<p>后来发现反转字符串还有一个牛逼的用处，就是达到左旋的效果。在<code>右旋字符串</code>中，我们通过先局部反转再整体反转达到了左旋的效果。</p>
+<h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p>KMP的主要思想是当出现字符串不匹配时，可以知道一部分之前已经匹配的文本内容，可以利用这些信息避免从头再去做匹配了。</p>
+<p>KMP的精髓所在就是前缀表，在<code>实现strStr()</code>中提到了，什么是KMP，什么是前缀表，以及为什么要用前缀表。</p>
+<ul>
+<li>前缀表：起始位置到下标i之前（包括i）的子串中，有多大长度的相同前缀后缀。</li>
+</ul>
+<p>那么使用KMP可以解决两类经典问题：</p>
+<p>匹配问题：<code>实现 strStr()</code><br>重复子串问题：<code>重复的子字符串</code><br>再一次强调了什么是前缀，什么是后缀，什么又是最长相等前后缀。</p>
+<ul>
+<li>前缀：指不包含最后一个字符的所有以第一个字符开头的连续子串。</li>
+<li>后缀：指不包含第一个字符的所有以最后一个字符结尾的连续子串。</li>
+</ul>
+<p>其中主要理解 j&#x3D;next[x] 这一步最为关键！</p>
+
+            
+        </div>
+    </div>
+
+    <div class="post-tags">
+        
+        
+    </div>
+
+    <a href="/2023/12/14/代码随想录/字符串解题总结/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
+    <a href="/2023/12/14/代码随想录/数组解题总结/">
+        <h2>
+            数组解题总结
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/14
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h2 id="数组的经典题目"><a href="#数组的经典题目" class="headerlink" title="数组的经典题目"></a>数组的经典题目</h2><p>在面试中，数组是必考的基础数据结构。</p>
+<p>其实数组的题目在思想上一般比较简单的，但是如果想高效，并不容易。</p>
+<p>之前一共讲解了四种经典数组题目，每一种题目都代表一个类型，一种思想。</p>
+<h3 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h3><p><strong>第一道题目是二分法题目</strong></p>
+<p>这道题目呢，考察数组的基本操作，思路很简单，但是通过率在简单题里并不高，不要轻敌。</p>
+<p>可以使用暴力解法，通过这道题目，如果追求更优的算法，建议试一试用二分法，来解决这道题目</p>
+<ul>
+<li>暴力解法时间复杂度：$O(n)$ </li>
+<li>二分法时间复杂度：$O(logn)$</li>
+</ul>
+<p>在这道题目中我们讲到了循环不变量原则，只有在循环中坚持对区间的定义，才能清楚的把握循环中的各种细节。</p>
+<p>二分法是算法面试中的常考题，建议通过这道题目，锻炼自己手撕二分的能力。</p>
+<h3 id="双指针法"><a href="#双指针法" class="headerlink" title="双指针法"></a>双指针法</h3><p><strong>第二道题目和第三道题目都是双指针法，第二道使用快慢指针法，第三道使用高低指针法</strong></p>
+<ol>
+<li>双指针法（快慢指针法）：通过一个快指针和慢指针在一个for循环下完成两个for循环的工作。</li>
+</ol>
+<ul>
+<li>暴力解法时间复杂度：$O(n^2)$</li>
+<li>双指针时间复杂度：$O(n)$</li>
+</ul>
+<p>这道题目迷惑了不少同学，纠结于数组中的元素为什么不能删除，主要是因为以下两点：</p>
+<ul>
+<li>数组在内存中是连续的地址空间，不能释放单一元素，如果要释放，就是全释放（程序运行结束，回收内存栈空间）。</li>
+<li>C++中vector和array的区别一定要弄清楚，vector的底层实现是array，封装后使用更友好。</li>
+</ul>
+<p>双指针法（快慢指针法）在数组和链表的操作中是非常常见的，很多考察数组和链表操作的面试题，都使用双指针法。</p>
+<ol start="2">
+<li>双指针法（高低指针法）：通过一个从头开始的指针和一个从尾开始的指针，对向移动，在一个for循环下完成两个for循环的工作。</li>
+</ol>
+<h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p><strong>第四道题目是滑动窗口法</strong></p>
+<ul>
+<li>暴力解法时间复杂度：$O(n^2)$</li>
+<li>滑动窗口时间复杂度：$O(n)$</li>
+</ul>
+<p>主要要理解滑动窗口如何移动 窗口起始位置，达到动态更新窗口大小的，从而得出长度最小的符合条件的长度。</p>
+<p>滑动窗口的精妙之处在于根据当前子序列和大小的情况，不断调节子序列的起始位置。从而将$O(n^2)$的暴力解法降为$O(n)$。</p>
+<p>如果没有接触过这一类的方法，很难想到类似的解题思路，滑动窗口方法还是很巧妙的。</p>
+<h3 id="模拟行为"><a href="#模拟行为" class="headerlink" title="模拟行为"></a>模拟行为</h3><p><strong>第五道题目是模拟题</strong></p>
+<p>模拟类的题目在数组中很常见，不涉及到什么算法，就是单纯的模拟，十分考察对代码的掌控能力。</p>
+<p>在这道题目中，我们再一次介绍到了<strong>循环不变量原则</strong>，其实这也是写程序中的重要原则。</p>
+<p>相信大家有遇到过这种情况： 感觉题目的边界调节超多，一波接着一波的判断，找边界，拆了东墙补西墙，好不容易运行通过了，代码写的十分冗余，毫无章法，其实<strong>真正解决题目的代码都是简洁的，或者有原则性的</strong>，大家可以在这道题目中体会到这一点。</p>
+
+            
+        </div>
+    </div>
+
+    <div class="post-tags">
+        
+        
+    </div>
+
+    <a href="/2023/12/14/代码随想录/数组解题总结/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
+    <a href="/2023/12/13/hello-world/">
+        <h2>
+            Hello World
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/13
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+            
+        </div>
+    </div>
+
+    <div class="post-tags">
+        
+        
+    </div>
+
+    <a href="/2023/12/13/hello-world/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+
+             
+<div class="page-current">
+
+    <div class="prev">
+        
+    </div>
+
+    <div class="page-index">
+
+        
+
+        <span class="current">
+            1
+        </span>
+
+        
+
+    </div>
+
+    <div class="next">
+        
+    </div>
+
+</div>
+
+        </div>
+    </div>
+    
+    <div id="home-card">
+        <a-affix :offset-top="card_top">
+    <a-card class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src="images/头像.jpg " alt="头像">
+        </div>
+        <div class="name">
+            leven
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                一个苦逼的打工人
+            </div>
+            
+            <div class="description">
+                在追逐梦想的道路上砥砺前行……
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/leven-comeon">
+
+                    
+                    <a-icon type="github"
+                        theme="filled" />
+                    
+                </a>
+            </span>
+            
+            <span class="icon-link">
+                <a href="https://leven-comeon.github.io">
+
+                    
+                    <a-icon type="wechat"
+                        theme="" />
+                    
+                </a>
+            </span>
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/zhi-zhi-zhe-13-21">
+
+                    
+                    <a-icon type="zhihu"
+                        theme="" />
+                    
+                </a>
+            </span>
+            
+        </div>
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/433368830?spm_id_from=333.1007.0.0">
+                    bilibili链接
+                </a>
+            </div>
+            
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5312668&auto=1&height=66"></iframe>
+    </a-card>
+</a-affix>
+    </div>
+    
+</div>
+                     
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Leven
+            <span class="footer-icon">
+                <a-icon type="flag" theme="filled" /></span>
+            @leven
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
+        
+    </div>
+
+</footer>
+
+<script src="/js/highlight.min.js"></script>
+<script src="/js/particle.js"></script>
+                </div>
+            </div>
+        </transition>
+    </div>
+
+    <script>
+    new Vue({
+        el: "#layout",
+        data: {
+            show_page: false,
+            onload_menu: false,
+            menu_show: false,
+            card_top: 100
+        },
+        created: function () {
+            var that = this
+            window.onload = function () {
+                that.show_page = true
+                document.getElementById("loadcontent").style.opacity = 0
+                setTimeout(function () {
+                    document.getElementById("loadleft").style.width = 0
+                    document.getElementById("loadright").style.width = 0
+                }, 300)
+                setTimeout(function () {
+                    document.getElementById("loading").style = "display:none"
+                }, 600)
+            }
+        },
+        mounted: function () {
+            var that = this
+            window.addEventListener('scroll', function (e) {
+                that.menu_show = false
+            })
+        },
+        methods: {
+            home_click: function () {
+                window.scrollTo({
+                    top: window.innerHeight - 80,
+                    behavior: "smooth",
+                });
+            }
+        }
+    })
+</script>
+
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 鼠标滑动彩色特效 -->
+    <script type="text/javascript" src="/js/hudongtexiao.js"></script>
+    <script type="text/javascript" src="/js/love.js"></script>
+    <!--动态线条背景-->
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="/js/snow.js"></script>
+    <!--人体时钟背景透明-->
+    <!-- <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script> -->
+</body>
+
+</html> 
