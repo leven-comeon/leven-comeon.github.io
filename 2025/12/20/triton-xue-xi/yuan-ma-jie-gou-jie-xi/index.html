@@ -10,14 +10,14 @@
 
 源码结构目录
     
-    Triton 的源码目录
 
 
 核心目录如下：
 
 utils：存放项目配置文件
 unittest：存放单元测试代码
-third_p">
+third_party：存放第三方库的代码
+te">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -455,7 +455,7 @@ third_p">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    465
+                    467
                 </div>
                 
 
@@ -485,7 +485,6 @@ third_p">
 </blockquote>
 <h2 id="源码结构目录"><a href="#源码结构目录" class="headerlink" title="源码结构目录"></a>源码结构目录</h2><div style="display:flex; flex-direction: column; align-items: center;">
     <img src="https://pic4.zhimg.com/v2-eefab95a0875908a9f98619910fb66a3_1440w.jpg" style="margin:auto;" title="triton目录结构">
-    <p style="text-align: center; color: #999; margin-top: 10px;">Triton 的源码目录</p>
 </div>
 
 <p>核心目录如下：</p>
@@ -500,9 +499,7 @@ third_p">
 </ul>
 <h2 id="include和lib目录"><a href="#include和lib目录" class="headerlink" title="include和lib目录"></a><code>include</code>和<code>lib</code>目录</h2><div style="display:flex; flex-direction: column; align-items: center;">
     <img src="https://pic3.zhimg.com/v2-ad94f8b9ae76e43465c78cad82b2ac44_1440w.jpg" style="margin:auto;" title="include目录结构">
-    <p style="text-align: center; color: #999; margin-top: 10px;">Triton 的 include 目录</p>
     <img src="https://pic3.zhimg.com/v2-b5b1ccbf57ef4a9c539596409a56d352_1440w.jpg" style="margin:auto;" title="lib目录结构">
-    <p style="text-align: center; color: #999; margin-top: 10px;">Triton 的 lib 目录</p>
 </div>
 
 <p>两个目录中的子目录结构类似，都包含以下文件夹：</p>
@@ -532,6 +529,9 @@ third_p">
 <p><strong><code>transforms</code> 作用于各级中间表示 <code>dialect</code> 之上，而 <code>conversion</code> 作用于各级中间表示 <code>dialect</code> 之间。</strong></p>
 <h3 id="Target目录"><a href="#Target目录" class="headerlink" title="Target目录"></a><code>Target</code>目录</h3><p>用于将 <code>LLVM-dialect</code> 降级到 <code>LLVM-IR</code>，并为其添加元数据以及链接外部数学库。</p>
 <h3 id="Tools目录"><a href="#Tools目录" class="headerlink" title="Tools目录"></a><code>Tools</code>目录</h3><p>包含了一些辅助工具的头文件，帮助开发者更好地分析、调试和优化生成的代码。</p>
+<blockquote>
+<p>以上目录结构解析参考自 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/16752382946">Triton 源码目录结构</a></p>
+</blockquote>
 
                 
             </div>
