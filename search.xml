@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>编译原理</title>
+      <link href="/2025/12/20/triton-xue-xi/bian-yi-yuan-li/"/>
+      <url>/2025/12/20/triton-xue-xi/bian-yi-yuan-li/</url>
+      
+        <content type="html"><![CDATA[<h1 id="triton学习：编译原理"><a href="#triton学习：编译原理" class="headerlink" title="triton学习：编译原理"></a>triton学习：编译原理</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> MLSys </category>
+          
+          <category> kernel </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> triton-lang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>源码结构解析</title>
+      <link href="/2025/12/20/triton-xue-xi/yuan-ma-jie-gou-jie-xi/"/>
+      <url>/2025/12/20/triton-xue-xi/yuan-ma-jie-gou-jie-xi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="triton学习：源码结构解析"><a href="#triton学习：源码结构解析" class="headerlink" title="triton学习：源码结构解析"></a>triton学习：源码结构解析</h1><blockquote><p>研读使用代码版本：<a href="https://github.com/triton-lang/triton/tree/v3.5.1#">Triton v3.5.1</a></p></blockquote><h2 id="源码结构目录"><a href="#源码结构目录" class="headerlink" title="源码结构目录"></a>源码结构目录</h2><div style="display:flex; flex-direction: column; align-items: center;">    <img src="https://pic4.zhimg.com/v2-eefab95a0875908a9f98619910fb66a3_1440w.jpg" style="margin:auto;" title="triton目录结构">    <p style="text-align: center; color: #999; margin-top: 10px;">Triton 的源码目录</p></div><p>核心目录如下：</p><ul><li><code>utils</code>：存放项目配置文件</li><li><code>unittest</code>：存放单元测试代码</li><li><code>third_party</code>：存放第三方库的代码</li><li><code>test</code>：存放测试代码</li><li><code>python</code>：存放Python接口代码</li><li><code>lib</code>：存放功能实现的核心代码</li><li><code>include</code>：存放功能定义的核心代码</li></ul><h2 id="include和lib目录"><a href="#include和lib目录" class="headerlink" title="include和lib目录"></a><code>include</code>和<code>lib</code>目录</h2><div style="display:flex; flex-direction: column; align-items: center;">    <img src="https://pic3.zhimg.com/v2-ad94f8b9ae76e43465c78cad82b2ac44_1440w.jpg" style="margin:auto;" title="include目录结构">    <p style="text-align: center; color: #999; margin-top: 10px;">Triton 的 include 目录</p>    <img src="https://pic3.zhimg.com/v2-b5b1ccbf57ef4a9c539596409a56d352_1440w.jpg" style="margin:auto;" title="lib目录结构">    <p style="text-align: center; color: #999; margin-top: 10px;">Triton 的 lib 目录</p></div><p>两个目录中的子目录结构类似，都包含以下文件夹：</p><ul><li><code>Analysis</code>：用于进行相关分析</li><li><code>Conversion</code>：负责不同dialect之间的转换</li><li><code>Dialect</code>：各级中间表示（IR）的定义及优化<code>pass</code>，包含<code>Gluon</code>、<code>Triton</code>、<code>Triton-GPU</code>、<code>TritonInstrument</code>、<code>TritonNvidiaGPU</code></li><li><code>Target</code>：将<code>LLVM-dialect</code>降级到<code>LLVM-IR</code>，并链接外部数学库</li><li><code>Tools</code>：包含一些辅助工具的头文件，用于分析和调试生成的代码</li></ul><h3 id="Analysis目录"><a href="#Analysis目录" class="headerlink" title="Analysis目录"></a><code>Analysis</code>目录</h3><ul><li><code>Alias.cpp</code>：用于内存别名分析</li><li><code>Allocation.cpp</code>：用于共享内存分配相关的分析</li><li><code>AxisInfo.cpp</code>：实现轴分析相关的内容</li><li><code>Membar.cpp</code>：与线程同步内存屏障相关</li><li><code>Utility.cpp</code>：一些相关组件</li></ul><h3 id="Conversion目录"><a href="#Conversion目录" class="headerlink" title="Conversion目录"></a><code>Conversion</code>目录</h3><ul><li><code>TritonToTritonGPU</code>：负责将 <code>Triton-dialect</code> 降级到 <code>Triton-GPU-dialect</code></li><li><code>TritonGPUToLLVM</code>：负责将 <code>Triton-GPU-dialect</code> 降级到 <code>LLVM-dialect</code></li></ul><h3 id="Dialect目录"><a href="#Dialect目录" class="headerlink" title="Dialect目录"></a><code>Dialect</code>目录</h3><p>以 <code>triton</code> 目录为例，每一级中间表示目录下都包含以下两个文件夹：</p><ul><li><code>IR</code>：包含 dialect、算子、属性以及类型的定义</li><li><code>Transforms</code>：存放相应的中间表示上的优化 <code>pass</code></li></ul><p><strong><code>transforms</code> 作用于各级中间表示 <code>dialect</code> 之上，而 <code>conversion</code> 作用于各级中间表示 <code>dialect</code> 之间。</strong></p><h3 id="Target目录"><a href="#Target目录" class="headerlink" title="Target目录"></a><code>Target</code>目录</h3><p>用于将 <code>LLVM-dialect</code> 降级到 <code>LLVM-IR</code>，并为其添加元数据以及链接外部数学库。</p><h3 id="Tools目录"><a href="#Tools目录" class="headerlink" title="Tools目录"></a><code>Tools</code>目录</h3><p>包含了一些辅助工具的头文件，帮助开发者更好地分析、调试和优化生成的代码。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MLSys </category>
+          
+          <category> kernel </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> triton-lang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>快手面经</title>
       <link href="/2025/09/14/mian-jing/kuai-shou-mian-jing/"/>
       <url>/2025/09/14/mian-jing/kuai-shou-mian-jing/</url>
